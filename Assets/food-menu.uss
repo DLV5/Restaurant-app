@@ -1,12 +1,20 @@
 Button {
-    right: 0;
+    right: auto;
     flex-direction: row-reverse;
     flex-grow: 1;
     font-size: 50px;
     flex-wrap: nowrap;
-    left: 70%;
-    width: 30%;
+    left: auto;
+    width: 160px;
     flex-shrink: 0;
+    height: 160px;
+    transition-duration: 0.3s;
+}
+
+Button:active {
+    -unity-background-image-tint-color: rgb(140, 135, 135);
+    width: 170px;
+    height: 170px;
 }
 
 .background {
@@ -24,8 +32,15 @@ Button {
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 0;
+    flex-shrink: 0;
 }
 
-.add-dish-block {
-    width: 30%;
+.dish-box {
+    background-color: rgb(120, 120, 120);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    margin-bottom: 10px;
+    height: 20%;
 }

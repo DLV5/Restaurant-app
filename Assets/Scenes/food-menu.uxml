@@ -1,13 +1,61 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/food-menu.uss?fileID=7433441132597879392&amp;guid=27d55dba4c6cdaf4392431f3a14b9065&amp;type=3#food-menu" />
-    <ui:VisualElement name="Background" class="background">
+    <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1">
         <ui:VisualElement name="list-container" style="height: 100%;">
-            <ui:VisualElement name="dish-box" style="height: 10%;">
-                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Lavazza%20coffee.jpg?fileID=2800000&amp;guid=88d951bc9a40372429319046a072918c&amp;type=3#Lavazza coffee&apos;);" />
-                <ui:VisualElement name="dish-price" />
-                <ui:VisualElement name="dish-name-text" />
-                <ui:Button text="Button" display-tooltip-when-elided="true" name="add-dish-button" style="white-space: nowrap; flex-shrink: 0; -unity-text-align: middle-center;" />
+            <ui:VisualElement name="dish-type-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; border-left-color: rgb(147, 147, 147); border-right-color: rgb(147, 147, 147); border-top-color: rgb(147, 147, 147); border-bottom-color: rgb(147, 147, 147);">
+                <ui:VisualElement name="dish-type-discription" style="margin-left: 0; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/Modern%20No.asset?fileID=11400000&amp;guid=2a9215219c6f8a544bb8491017aa5291&amp;type=2#Modern No&apos;); margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-center; width: 669px; flex-grow: 1;">
+                    <ui:Label text="Desserts" display-tooltip-when-elided="true" name="dish-type-descrition-text" style="font-size: 180px; height: 207px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dish-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; border-left-color: rgb(147, 147, 147); border-right-color: rgb(147, 147, 147); border-top-color: rgb(147, 147, 147); border-bottom-color: rgb(147, 147, 147);">
+                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Pannacota.png?fileID=2800000&amp;guid=755e1df3ca0a26b418ad5aecd8d7758c&amp;type=3#Pannacota&apos;);" />
+                <ui:VisualElement name="dish-descripion-text-container" style="margin-left: 0; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/Modern%20No.asset?fileID=11400000&amp;guid=2a9215219c6f8a544bb8491017aa5291&amp;type=2#Modern No&apos;); margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-center; width: 669px;">
+                    <ui:Label text="Pannacotta" display-tooltip-when-elided="true" name="dish-descrition-text" style="font-size: 100px; height: 207px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="button-and-price-container" style="white-space: normal; flex-direction: column;">
+                    <ui:Button display-tooltip-when-elided="true" name="add-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Add-button.png?fileID=21300000&amp;guid=13d22936ee111e441a6f1e85e1b23398&amp;type=3#Add-button&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                    <ui:VisualElement name="price-text-container" style="flex-grow: 1;">
+                        <ui:Label text="3.00€" display-tooltip-when-elided="true" name="price-text" style="-unity-text-align: upper-center; font-size: 50px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dish-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; border-left-color: rgb(147, 147, 147); border-right-color: rgb(147, 147, 147); border-top-color: rgb(147, 147, 147); border-bottom-color: rgb(147, 147, 147);">
+                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Ricotta%20cake%20no%20BG.png?fileID=2800000&amp;guid=861b69f8dfcefa94a80aa397e30d0896&amp;type=3#Ricotta cake no BG&apos;);" />
+                <ui:VisualElement name="dish-descripion-text-container" style="margin-left: 0; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/Modern%20No.asset?fileID=11400000&amp;guid=2a9215219c6f8a544bb8491017aa5291&amp;type=2#Modern No&apos;); margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-center; width: 669px;">
+                    <ui:Label text="Ricotta cake" display-tooltip-when-elided="true" name="dish-descrition-text" style="font-size: 100px; height: 207px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="button-and-price-container" style="white-space: normal; flex-direction: column;">
+                    <ui:Button display-tooltip-when-elided="true" name="add-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Add-button.png?fileID=21300000&amp;guid=13d22936ee111e441a6f1e85e1b23398&amp;type=3#Add-button&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                    <ui:VisualElement name="price-text-container" style="flex-grow: 1;">
+                        <ui:Label text="5.00€" display-tooltip-when-elided="true" name="price-text" style="-unity-text-align: upper-center; font-size: 50px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dish-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; border-left-color: rgb(147, 147, 147); border-right-color: rgb(147, 147, 147); border-top-color: rgb(147, 147, 147); border-bottom-color: rgb(147, 147, 147);">
+                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Lavazza%20coffee%20no%20BG.png?fileID=2800000&amp;guid=f1ebca5381b077b4f95082cce274c063&amp;type=3#Lavazza coffee no BG&apos;);" />
+                <ui:VisualElement name="dish-descripion-text-container" style="margin-left: 0; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/Modern%20No.asset?fileID=11400000&amp;guid=2a9215219c6f8a544bb8491017aa5291&amp;type=2#Modern No&apos;); margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-center; width: 669px;">
+                    <ui:Label text="Lavazza cofee" display-tooltip-when-elided="true" name="dish-descrition-text" style="font-size: 100px; height: 207px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="button-and-price-container" style="white-space: normal; flex-direction: column;">
+                    <ui:Button display-tooltip-when-elided="true" name="add-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Add-button.png?fileID=21300000&amp;guid=13d22936ee111e441a6f1e85e1b23398&amp;type=3#Add-button&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                    <ui:VisualElement name="price-text-container" style="flex-grow: 1;">
+                        <ui:Label text="2.50€" display-tooltip-when-elided="true" name="price-text" style="-unity-text-align: upper-center; font-size: 50px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dish-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; border-left-color: rgb(147, 147, 147); border-right-color: rgb(147, 147, 147); border-top-color: rgb(147, 147, 147); border-bottom-color: rgb(147, 147, 147);">
+                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Gelatto.png?fileID=2800000&amp;guid=be6e91ee78464a24aa45675286544c78&amp;type=3#Gelatto&apos;);" />
+                <ui:VisualElement name="dish-descripion-text-container" style="margin-left: 0; -unity-font-definition: url(&apos;project://database/Assets/Art/Fonts/Modern%20No.asset?fileID=11400000&amp;guid=2a9215219c6f8a544bb8491017aa5291&amp;type=2#Modern No&apos;); margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: middle-center; width: 669px;">
+                    <ui:Label text="Gelato" display-tooltip-when-elided="true" name="dish-descrition-text" style="font-size: 100px; height: 207px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="button-and-price-container" style="white-space: normal; flex-direction: column;">
+                    <ui:Button display-tooltip-when-elided="true" name="add-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Add-button.png?fileID=21300000&amp;guid=13d22936ee111e441a6f1e85e1b23398&amp;type=3#Add-button&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                    <ui:VisualElement name="price-text-container" style="flex-grow: 1;">
+                        <ui:Label text="2.50€" display-tooltip-when-elided="true" name="price-text" style="-unity-text-align: upper-center; font-size: 50px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-    </ui:VisualElement>
+    </ui:ScrollView>
+    <ui:VisualElement name="Background" class="background" />
 </ui:UXML>
