@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/food-menu.uss?fileID=7433441132597879392&amp;guid=27d55dba4c6cdaf4392431f3a14b9065&amp;type=3#food-menu" />
+    <ui:VisualElement name="Background" class="background">
+        <ui:VisualElement name="list-container" style="height: 100%;">
+            <ui:VisualElement name="dish-box" style="height: 10%;">
+                <ui:VisualElement name="dish-image" class="dish-image" style="background-image: url(&apos;project://database/Assets/Art/Images/DishImages/Lavazza%20coffee.jpg?fileID=2800000&amp;guid=88d951bc9a40372429319046a072918c&amp;type=3#Lavazza coffee&apos;);" />
+                <ui:VisualElement name="dish-price" />
+                <ui:VisualElement name="dish-name-text" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" name="add-dish-button" style="white-space: nowrap; flex-shrink: 0; -unity-text-align: middle-center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
