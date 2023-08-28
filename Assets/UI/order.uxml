@@ -88,13 +88,9 @@
                     <ui:Label text="Total price: 0€" display-tooltip-when-elided="true" name="total-price-text" style="font-size: 100px; height: auto; flex-grow: 1; width: 100%;" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="procced-and-reset-button-box" style="flex-grow: 1; flex-direction: row; height: 100px; position: relative; width: 100%; margin-top: 10px;">
-                <ui:VisualElement name="button-container" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; width: 50%;">
-                    <ui:Button display-tooltip-when-elided="true" name="delete-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Delete-button.png?fileID=1566937562098170457&amp;guid=c5495945662eaba40b68b5abebacf7eb&amp;type=3#Delete-button_0&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
-                </ui:VisualElement>
-                <ui:VisualElement name="button-container" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row; width: 50%;">
-                    <ui:Button display-tooltip-when-elided="true" name="delete-dish-button" style="white-space: normal; flex-shrink: 0; -unity-text-align: middle-center; flex-direction: row-reverse; position: relative; background-image: url(&apos;project://database/Assets/Art/Images/Delete-button.png?fileID=1566937562098170457&amp;guid=c5495945662eaba40b68b5abebacf7eb&amp;type=3#Delete-button_0&apos;); flex-grow: 0; background-color: rgba(88, 88, 88, 0); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
-                </ui:VisualElement>
+            <ui:VisualElement name="total-price-box" class="dish-box" style="padding-left: 1%; padding-right: 1%; padding-top: 1%; padding-bottom: 1%; flex-direction: row;">
+                <ui:Button text="Return" display-tooltip-when-elided="true" name="quit-button" />
+                <ui:Button text="Proceed" display-tooltip-when-elided="true" name="proceed-button" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:ScrollView>
