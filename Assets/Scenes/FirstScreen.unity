@@ -374,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIDocument: {fileID: 324914573}
+  m_FirstScreen: {fileID: 9197481963319205126, guid: 49a5e8acef02cd04198b608ef2685f75, type: 3}
+  m_MainMenuTemplate: {fileID: 9197481963319205126, guid: 53a5d23e822831d44a33a1851ffaecaa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -3,10 +3,17 @@ using UnityEngine;
 using System.Xml;
 using UnityEngine.SceneManagement;
 
-public class UIEventHandler : MonoBehaviour
+public class FirstSceneUI : MonoBehaviour
 {
     [SerializeField]
     private UIDocument m_UIDocument;
+
+    [SerializeField] private VisualTreeAsset m_FirstScreen;
+    [SerializeField] private VisualTreeAsset m_MainMenuTemplate;
+
+    private VisualElement m_MainMenu;
+
+    private VisualElement m_container;
 
     private Button m_Button;
 
@@ -14,9 +21,11 @@ public class UIEventHandler : MonoBehaviour
     {
         var rootElement = m_UIDocument.rootVisualElement;
 
-        // This searches for the VisualElement Button named “EventButton”
-        // rootElement.Query<> and rootElement.Q<> can both be used
+        m_container = rootElement.Q<VisualElement>("background");
+        
         m_Button = rootElement.Q<Button>("FinnishLanguageButton");
+
+        m_MainMenu = m_MainMenuTemplate.CloneTree();
 
         // Elements with no values like Buttons can register callBacks
         // with clickable.clicked
@@ -31,6 +40,7 @@ public class UIEventHandler : MonoBehaviour
 
     public void OnButtonClicked()
     {
-        SceneManager.LoadScene("MainMenuScreen"); // Transition to the second UXML document
+       m_container.Clear();
+        m_container.Add(m_MainMenu);
     }
 }
