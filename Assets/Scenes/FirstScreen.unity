@@ -337,7 +337,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850652282}
+  - component: {fileID: 1850652285}
   - component: {fileID: 1850652283}
+  - component: {fileID: 1850652284}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -376,6 +378,35 @@ MonoBehaviour:
   m_UIDocument: {fileID: 324914573}
   m_FirstScreen: {fileID: 9197481963319205126, guid: 49a5e8acef02cd04198b608ef2685f75, type: 3}
   m_MainMenuTemplate: {fileID: 9197481963319205126, guid: 53a5d23e822831d44a33a1851ffaecaa, type: 3}
+--- !u!114 &1850652284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850652281}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddff7d9d6a09e84b966bbc2c13193c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIDocument: {fileID: 324914573}
+  m_FoodMenuTemplate: {fileID: 9197481963319205126, guid: 2e3b0a625699b7b44af56a70db1057e8, type: 3}
+  m_SettingsTemplate: {fileID: 9197481963319205126, guid: 49a5e8acef02cd04198b608ef2685f75, type: 3}
+--- !u!114 &1850652285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850652281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991e7094bf6594e40a96fd699ecfa7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chooseLanguageUI: {fileID: 1850652283}
+  _mainMenuUI: {fileID: 1850652284}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

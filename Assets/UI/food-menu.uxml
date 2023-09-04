@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/food-menu.uss?fileID=7433441132597879392&amp;guid=27d55dba4c6cdaf4392431f3a14b9065&amp;type=3#food-menu" />
+    <Style src="project://database/Assets/UI/food-menu.uss?fileID=7433441132597879392&amp;guid=27d55dba4c6cdaf4392431f3a14b9065&amp;type=3#food-menu" />
     <ui:VisualElement name="Background" class="background" style="background-color: rgb(43, 42, 42);" />
     <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="1" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" nested-interaction-kind="Default">
         <ui:VisualElement name="list-container" style="height: 100%;">
