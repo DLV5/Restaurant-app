@@ -1,17 +1,21 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class Order : MonoBehaviour
 {
     public static Order Instance;
 
+    [Serializable]
     private class OrderElement
     {
         public string name;
-        public decimal price;
+        public float price;
         public int count = 1;
 
-        public OrderElement(string name, decimal price)
+        public OrderElement(string name, float price)
         {
             this.name = name;
             this.price = price;
@@ -35,8 +39,10 @@ public class Order : MonoBehaviour
         }
     }
 
-    public void AddDishInOrder(string name, decimal price)
+    public void AddDishInOrder(string name, float price)
     {
+        _hasMatch = false;
+
         foreach (var element in order)
         {
             if (element.name == name)
@@ -53,12 +59,26 @@ public class Order : MonoBehaviour
         }
     }
 
-    public void GetTotalPrice()
+    public float GetTotalPrice()
     {
-        decimal totalSum = 0;
+        float totalSum = 0;
         foreach (var element in order)
         {
             totalSum += element.price * element.count;
         }
+
+        return totalSum;
+    }
+
+    public void SaveOrder()
+    {
+        string json = JsonUtility.ToJson(order, true);
+
+        StreamWriter writer = new StreamWriter("orderData.json");
+        writer.Write(json);
+
+        writer.Close();
+
+        Debug.Log("saved");
     }
 }

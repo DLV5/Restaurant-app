@@ -23,6 +23,7 @@ public class FoodMenuUI : MonoBehaviour
     private VisualElement m_order;
     private VisualElement m_dishBox;
 
+    private Button m_ProceedOrderButton;
 
     private VisualElement m_container;
 
@@ -39,29 +40,46 @@ public class FoodMenuUI : MonoBehaviour
         m_order = m_proceedTemplate.CloneTree();
         m_dishBox = m_dishBoxTemplate.CloneTree();
 
-        foreach(var boxData in m_boxesData)
+        m_ProceedOrderButton = rootElement.Q<Button>("proceed-order");
+
+        foreach (var boxData in m_boxesData)
         {
-            Debug.Log("loading");
             VisualElement m_dishBox = m_dishBoxTemplate.CloneTree(); 
             m_dishBox.Q<VisualElement>("dish-image").style.backgroundImage = boxData.dishImg;
             m_dishBox.Q<Label>("dish-descrition-text").text = boxData.name;
             m_dishBox.Q<Label>("price-text").text = boxData.price + "€";
+            m_dishBox.Q<Button>("add-dish-button").RegisterCallback<ClickEvent>(ev => OnClick(boxData.name, boxData.price));
             m_container.Add(m_dishBox);
         }
         // Elements with no values like Buttons can register callBacks
+        m_container = rootElement;
+
+        m_container.Add(m_backet);
 
 
+        m_ProceedOrderButton.clickable.clicked += ProceedOrder;
     }
 
-    private void OnDisable()
+    private void OnClick(string name, float price)
     {
-
+        Order.Instance.AddDishInOrder(name, price);
+        RefreshTotalCost();
     }
 
+    private void RefreshTotalCost()
+    {
+        Label totalPrice = m_backet.Q<Label>("total-price-label");
+        totalPrice.text = "Total price: " + Order.Instance.GetTotalPrice() + "€";
+    }
     public void OnAddButtonClicked()
     {
        // m_container.Add(m_backet);
 
        
+    }
+
+    private void ProceedOrder()
+    {
+        Order.Instance.SaveOrder();
     }
 }

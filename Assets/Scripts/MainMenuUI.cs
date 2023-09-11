@@ -33,7 +33,6 @@ public class MainMenuUI : MonoBehaviour
         // with clickable.clicked
         m_ToFoodMenuButton.clickable.clicked += OnFoodButtonClicked;
         m_ToSettingsButton.clickable.clicked += OnSettingsButtonClicked;
-
     }
 
     private void OnDisable()
@@ -56,5 +55,4 @@ public class MainMenuUI : MonoBehaviour
 
         UIScriptsManager.Instance.SwitchScreen(CurrentScreen.ChooseLanguage);
     }
-
 }
