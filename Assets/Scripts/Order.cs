@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Linq;
 using UnityEngine;
 
 public class Order : MonoBehaviour
@@ -59,6 +58,25 @@ public class Order : MonoBehaviour
         }
     }
 
+    public void RemoveDishfromOrder(string name, float price)
+    {
+        foreach (var element in order)
+        {
+            if (element.name == name)
+            {        
+                element.count--;
+                _hasMatch = true;
+
+                if (element.count < 1)
+                {
+                    order.Remove(element);
+                }
+
+                break;
+            }
+        }
+    }
+
     public float GetTotalPrice()
     {
         float totalSum = 0;
@@ -72,9 +90,10 @@ public class Order : MonoBehaviour
 
     public void SaveOrder()
     {
-        string json = JsonUtility.ToJson(order, true);
-
         StreamWriter writer = new StreamWriter("orderData.json");
+
+        string json = JsonHelper.ToJson(order);
+
         writer.Write(json);
 
         writer.Close();

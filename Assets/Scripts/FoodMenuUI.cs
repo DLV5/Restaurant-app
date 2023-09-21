@@ -40,7 +40,7 @@ public class FoodMenuUI : MonoBehaviour
         m_order = m_proceedTemplate.CloneTree();
         m_dishBox = m_dishBoxTemplate.CloneTree();
 
-        m_ProceedOrderButton = rootElement.Q<Button>("proceed-order");
+        m_ProceedOrderButton = m_backet.Q<Button>("proceed-order");
 
         foreach (var boxData in m_boxesData)
         {
@@ -48,7 +48,8 @@ public class FoodMenuUI : MonoBehaviour
             m_dishBox.Q<VisualElement>("dish-image").style.backgroundImage = boxData.dishImg;
             m_dishBox.Q<Label>("dish-descrition-text").text = boxData.name;
             m_dishBox.Q<Label>("price-text").text = boxData.price + "€";
-            m_dishBox.Q<Button>("add-dish-button").RegisterCallback<ClickEvent>(ev => OnClick(boxData.name, boxData.price));
+            m_dishBox.Q<Button>("add-dish-button").RegisterCallback<ClickEvent>(ev => AddDish(boxData.name, boxData.price));
+            m_dishBox.Q<Button>("remove-dish-button").RegisterCallback<ClickEvent>(ev => RemoveDish(boxData.name, boxData.price));
             m_container.Add(m_dishBox);
         }
         // Elements with no values like Buttons can register callBacks
@@ -60,9 +61,14 @@ public class FoodMenuUI : MonoBehaviour
         m_ProceedOrderButton.clickable.clicked += ProceedOrder;
     }
 
-    private void OnClick(string name, float price)
+    private void AddDish(string name, float price)
     {
         Order.Instance.AddDishInOrder(name, price);
+        RefreshTotalCost();
+    }
+    private void RemoveDish(string name, float price)
+    {
+        Order.Instance.RemoveDishfromOrder(name, price);
         RefreshTotalCost();
     }
 
@@ -80,6 +86,7 @@ public class FoodMenuUI : MonoBehaviour
 
     private void ProceedOrder()
     {
+        Debug.Log("clicked");
         Order.Instance.SaveOrder();
     }
 }

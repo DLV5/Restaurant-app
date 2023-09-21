@@ -2,7 +2,7 @@
     <ui:VisualElement name="bucket-container" style="flex-grow: 1; position: absolute; height: 408px; width: 1128px; top: auto; bottom: 0;">
         <ui:VisualElement name="total-price-label-container" style="flex-grow: 1; height: 365px; background-color: rgb(82, 82, 82); flex-shrink: 0; width: 1132px;">
             <ui:Label tabindex="-1" text="Total price: 0€" display-tooltip-when-elided="true" name="total-price-label" style="font-size: 100px; height: 270px; width: 1123px; -unity-text-align: middle-center;" />
-            <ui:Button text="Proceed order" display-tooltip-when-elided="true" name="proceed-order" style="flex-grow: 0; flex-shrink: 1; height: 395px; font-size: 100px;" />
+            <ui:Button text="Proceed order" display-tooltip-when-elided="true" name="proceed-order" style="flex-grow: 0; flex-shrink: 0; height: 111px; font-size: 100px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,0 +1,14 @@
+{
+    "Items": [
+        {
+            "name": "Pannacotta ",
+            "price": 3.0,
+            "count": 5
+        },
+        {
+            "name": "Gelato",
+            "price": 2.5,
+            "count": 2
+        }
+    ]
+}

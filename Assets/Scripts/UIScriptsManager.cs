@@ -31,7 +31,7 @@ public class UIScriptsManager : MonoBehaviour
     }
     private void Start()
     {
-        SwitchScreen(CurrentScreen.ChooseLanguage);
+        SwitchScreen(CurrentScreen.MainMenu);
     }
     public void SwitchScreen(CurrentScreen newScreen)
     {
